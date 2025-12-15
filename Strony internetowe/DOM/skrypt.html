@@ -1,0 +1,57 @@
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dodawanie akapitów</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 20px; }
+    #controls { margin-bottom: 16px; }
+    button { padding: 8px 12px; font-size: 16px; cursor: pointer; }
+    #container p { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>Dodawanie akapitów</h1>
+  <div id="controls">
+    <button id="addBtn" aria-label="Dodaj akapit">Dodaj akapit</button>
+    <span id="count" style="margin-left:8px;color:#555;">0 akapitów</span>
+  </div>
+  <div id="container" aria-live="polite"></div>
+  <script>
+    (function() {
+      const addBtn = document.getElementById('addBtn');
+      const container = document.getElementById('container');
+      const countLabel = document.getElementById('count');
+      // Startujemy od 0. Jeśli chcesz kontynuować numerację po odświeżeniu,
+      // można tu użyć localStorage (przykład poniżej).
+      let counter = 0;
+      // Jeśli wolisz zachować liczbę po odświeżeniu, odkomentuj:
+      // const saved = parseInt(localStorage.getItem('paragraphCounter'), 10);
+      // if (!Number.isNaN(saved)) counter = saved;
+      function updateCountLabel() {
+        countLabel.textContent = `${counter} akapitów`;
+      }
+      function addParagraph() {
+        counter += 1;
+        const p = document.createElement('p');
+        p.textContent = `Akapit numer ${counter}`;
+        // opcjonalnie dodać klasę/ID albo data-attribute:
+        p.setAttribute('data-index', counter);
+        container.appendChild(p);
+        updateCountLabel();
+        // localStorage.setItem('paragraphCounter', String(counter)); // jeśli używasz localStorage
+      }
+      addBtn.addEventListener('click', addParagraph);
+      // dostępność: pozwól na dodanie Enter/Space kiedy fokus jest na przycisku:
+      addBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          addParagraph();
+        }
+      });
+      // inicjalizacja
+      updateCountLabel();
+    })();
+  </script>
+</body>
+</html>

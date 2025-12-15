@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKRYPT PRZYCISK</title>
+</head>
+<body>
+    <button id="Przycisk">Zobacz</button>
+    <div id="Demo"></div>
+    
+    <script>
+        let button = document.querySelector("#Przycisk");
+        let counter = 1;
+
+        button.addEventListener("mouseover", mover);
+        button.addEventListener("click", mclick);
+        function mover(){
+            document.querySelector("#Demo").innerHTML +="over <br>";
+        }
+        function mclick(){
+            
+            let p=document.createElement("p");
+            p.textContent="Nowy akapit po kliknieciu" + counter;
+            document.querySelector("#Demo").appendChild(p);
+            counter++;
+        }
+
+    </script>
+</body>
+</html>

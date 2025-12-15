@@ -1,0 +1,6 @@
+zdefiniuj dwie klasy 
+Przypisanie obslugi zdarzen do elementu HTML
+przypisanie zmiany wlasciwosci do zdazrenia
+
+ <h1 onclick=”this.innerHTML=’nowy tekst’”>
+kliknij w tekst </h1>
