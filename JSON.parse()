@@ -1,0 +1,39 @@
+1. JSON okresla sposob zapisu danych 
+2. JSON parse przekształca string na obiekt 
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let jsonString='{"name":"John","age":30,"city":"New Targ"}';
+    let osoba =JSON.parse( jsonString );
+    console.log(osoba.name);
+    console.log(osoba.age);
+    </script>
+</body>
+</html>
+
+
+3. JSON.stringify przeksztalca obiekt na string 
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+         const obj = {name:"John",age: 30, city:"New York"};
+         const myJSON=JSON.stringify(obj);
+         document.querySelector("#demo").innerHTML= myJSON;
+    </script>
+</body>
+</html>
