@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Nasza pierwsza strona</title>
+</head>
+<body>
+
+
+    <h1>witaj na naszej stronie</h1>
+    <h2>TO JEST NAGLUwek pdrugiego stopnia</h2>
+    <p>to jest jakis akapit</p>
+    <a href="pierwsza.html">przejdż na pierwszą stronę   </a>
+</body>
+</html>
+ druga strona 
+
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>To moja trzecia strona w html</title>
+</head>
+<body>
+
+
+    <h1>Dzien dobry</h1>
+    <h2><i>To to moj drugi naglowek</i></h2>
+    <p style="color:lightpink;">to zwierzatka ktore kocham  </p>
+    <a href="pierwsza.html">strona pierwsza   </a><br>
+   
+   
+   
+    <img src="kotek2.jpg" width="1000" height="100"> <br>
+
+
+    <img src="jezyk.jpg" width="300">
+
+
+</html>
+strona trzy
+
+
+
+Javascript
+Wprowadzenie JavaScript- JavaScript jest językiem programowania stworzonym przez firmę Netscape i działający w przeglądarce internetowej 
+TypeScript jest jezykiem rozszerzającym język JavaScript o definiowanie i kontrola typów danych 
+Ważne strony internetowe 
+developer.mozilla.org
+kursjs.pl
+www.w3schools.com
+4programmers.net
+stackoverflow.com
+freecodecamp.org
+goalkicker.com
+udemy.com
+youtube.com
+Przykłady:
+
+<script>
+      alert( “pierwszy skrypt” );
+</script>
+
+Importowanie skryptow z pliku:
+
+<script src= “jquery.min.js” ></script>
+
+IDE - Integrated Development Environment
+Edytor zawierający:
+kolorowanie składni
+debuger
+podpowiedzi
+biblioteki
+integracja z git-em
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>To moja trzecia strona w html</title>
+</head>
+<body>
+
+
+    <h1>Dzien dobry</h1>
+    <h2><i>To to moj drugi naglowek</i></h2>
+    <p style="color:lightpink;">to zwierzatka ktore kocham  </p>
+    <a href="pierwsza.html">strona pierwsza   </a><br>
+   
+   
+   
+    <img src="kotek2.jpg" width="1000" height="100"> <br>
+
+
+    <img src="jezyk.jpg" width="300">
+
+
+</html>
+
+Tablice
+Tablica jest to lista elementow umieszczcobych jedna za drugim 
+Tworzenie tablic
+const tab = [ ];  //pusta tablica 
+const liczby = [1,2,3,4];
+const imiona = [“Marcin”, “Ania”, “Agnieszka”];    
+console.log( liczby[0] ); // 1
+Tworzenie przy uzyciu tzw konsulatora
+Rozmair tabliucy
+const tab = [“Ala”, “ma”, “rudego”, “kota”];
+let rozmiar = tab.length;
+console.log( rozmiar ); 4
+console.log( tab[tab.length-1] ); //ostatni element - kota
+Funkcja Push()
+<h3>push() - dodaje elemnt na koniec tablicy</h3>
+<script>
+       var liczby = [1,2,3,4];
+       document.write( liczby + “<br>”);
+       liczby.push(5,6); //dodaje 5 i 6 na koniec tablicy
+       document.write(liczby + “<br>”);
+</script>
+Funkcja pop() - usuwa elementy z końca tablicy
+              <h3>pop() - usuwa element z koniec tablicy </h3>
+                    <script>
+	              var liczby = [1,2,3,4];
+	              document.write(liczby + “<br>”);
+	               liczby.pop();     //usuwa ostatni element z tablicy
+	              document.write(liczby + “<br>”);
+              </script>
+Funkcja pop() pobiera usuwany element z konca tablicy
+
+
+
+
+
+drugi parametr ozn=a=cza didawnie elemntow 
+
+
+
+
+
+
+
+
+Stringi- sposoby zapisu
+w cudzysłowiach””
+const text=”stoi na sdtacji lokomotywa…”
+
+w apostrofach ‘’
+const text=’Stoi na stacji lokomotywa…’;
+
+w grawisach ``
+const text=`stoi na stacji lokomotywa…`
+
+Tekst na wiele linii
+//poprzez operator przypisana
+let text=”stoi na stacji lokomotywa,<br>”;
+text +=”ciezka ogromna i pot z niej splywa:<br>”;
+text +=”tlusta oliwa.”;
+ += dołącza tekst do istniejącego tekstu
+//poprzez dodawanie czesci tekstu
+let text=”Stoi na stacji lokomotywa,<br>;”
++”ciezka ogromna i pot z niej slpywa:<br>”
++”tlusta oliwa”;
+
+Tekst na wiele linii
+//poprzez zastosowanie znaku backslash na koncu linii
+let text= “stoi na stacji lokomotywa,<br>\
+ciezka ogromna i pot z noiej slpywa:<br>\
+tlusta oliwa\”
+
+//najlepsza metoda -uzycie template strings
+lest text=`stoi na stacji lokomotywa,<br>
+co\o\\\zka ogromna i pot z niej splwqw:<br>
+tlusta oliwa`
+
+String i zmienne 
+var age = 10;
+const text=”ten pies ma “+age+”lat”;
+console.log(text ) ;
+const text1
+
+split()-przekształca tekst na tablice 
+const str = ‘The quick brown  fox jumps over the lazy dog.’;
+
+const words = str.split(‘ ‘);
+console.log(words[3]
+
+
+
+
+
+
+
+
+Instrukcja warunkowa if umozliwia wykonywanie instrukcji jezeli spelniony jest warunek
+
+Wartosc zero jest uwazana jako false 
+Wyrazenie logiczne rozne od zera ma wartosc true
+
+<script>
+        let odpowiedz=prompt(‘ile ksiezycow ma saturn?’);
+        if(odpowiedz == 31 ){
+                 
+
+
+Złożone warunki  logiczne
+
+Sprawdzenie czy liczba jest z zakresu 0 -10
+
+<script>
+	let liczba=prompt(‘podaj liczbe z przedzialu 0..10’);
+	if(liczba>0 && liczba ⇐10){
+		alert(‘poprawna odpowiedź ‘ = liczba);
+	}else{
+	alert(‘niepoprawna odpowiedz’);
+} 
+</script>
+ pop
+
+
+
+
+
+ Switch
+Instrukcja wariantowa - realcizuje jeden z wariantow
+switch(new date().getDay(0 ){
+case 1:
+text= “Today is monday”;
+break;
+case 0;
+text = “Today is thuesday”;
+break;
+default:
+text = “looking forward to the weekend”;
+}
+
+document.write( text ) ;   
+
+
+let liczba1=prompt(“podaj pierwsza liczbe “);
+let liczba2=prompt(“
