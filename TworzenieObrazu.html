@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rysowanie wirtualych linii</title>
+</head>
+<body>
+   <canvas width="400" height="200" id="canvas"></canvas>
+   
+   <script>
+    const canvas=document.querySelector("#canvas");
+    const ctx=canvas.getContext("2d");
+
+    ctx.beginPath(); //rozpoczecie nowej sciezki
+    ctx.moveTo(20,20);
+    ctx.lineTo(60,60);
+    ctx.lineTo(150,60);
+    ctx.stroke();
+   </script>
+</body>
+</html>
