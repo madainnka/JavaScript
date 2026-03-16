@@ -1,0 +1,35 @@
+Gradient łukowy
+  const gradient=ctx.createConicGradient(0,100,100);
+
+        gradient.addColorStop(0,"red");
+        gradient.addColorStop(0.25,"orange");
+        gradient.addColorStop(0.5,"yellow");
+        gradient.addColorStop(0.75,"green");
+        gradient.addColorStop(1,"blue");
+
+        ctx.fillStyle=gradient;
+        ctx.fillRect(20,20,200,200);
+
+Gradient Prominiowy
+
+const gradient.ctx.createRadialGradient(110,90,30,100,100,70);
+    gadient.addColorStop(0,"pink");
+    gradient.addColorStop(0.9,"white");
+    gradient.addColorStop(1,"green");
+
+    ctx.fillStyle=gradient;
+    ctx.fillRect(20,20,160,160);
+
+Gradient Liniowy
+
+   const canvas=document.querySelector("#canvas");
+    const ctx=canvas.getContext("2d");
+        //trzy kolory
+        gradient.addColorStop(0,"green");
+        gradient.addColorStop(0.5,"cyan");
+        gradient.addColorStop(1,"green");
+
+        //styl prostokat
+        ctx.fillStyle=gradient;
+        ctx.fillRect(20,20,200,100);
+        ctx.fill();
