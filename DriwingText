@@ -8,3 +8,28 @@ DriwingText-FillText
 font propeteries uses the same syntax as the CSS font specifier
         ctx.font="48px serif";
         ctx.fillText("Hello world",10,50);
+
+Shadow
+
+   ctx.shadowOffsetX=2;
+        ctx.shadowOffsetX=2;
+        ctx.shadowBlur=2;
+        ctx.shadowColor="rgba(0,0,0,0.5)";
+        ctx.font="30px Times New ROman";
+        ctx.fillStyle="Black";
+        ctx.fillText("Sample String",5,30);
+
+
+DrawImage()
+
+ const img=new Image();
+        img.onload=() =>{
+            ctx.drawImage(img,0,0);
+            ctx.beginPath();
+            ctx.moveTo(30,96);
+            ctx.lineTo(80, 66);
+            ctx.lineTo(103,76);
+            ctx.lineTo(170,15);
+            ctx.stroke();
+        };
+img.src=”backdrop.png”;
