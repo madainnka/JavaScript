@@ -33,3 +33,11 @@ DrawImage()
             ctx.stroke();
         };
 img.src=”backdrop.png”;
+
+Skalowanie obrazow
+
+const img=new Image();
+img.onload=() => {
+ctx.drawImage(img, 0, 0, 50, 50);
+};
+img.src=”backdrop.png”;
