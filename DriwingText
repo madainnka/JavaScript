@@ -1,0 +1,10 @@
+DriwingText-StrokeText
+
+ctx.font="48px serif";
+        ctx.strokeText("Hello world",10,50);
+
+DriwingText-FillText
+
+font propeteries uses the same syntax as the CSS font specifier
+        ctx.font="48px serif";
+        ctx.fillText("Hello world",10,50);
