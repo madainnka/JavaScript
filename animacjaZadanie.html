@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jezyk i kicius</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #eeb3e7;
+        }
+        canvas {
+            background: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="800" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+
+let bounce = 0;
+let sunAngle = 0;
+
+//słońce
+function drawSun() {
+    ctx.save();
+    ctx.translate(100, 100);
+    ctx.rotate(sunAngle);
+
+    ctx.fillStyle = "yellow";
+    ctx.beginPath();
+    ctx.arc(0, 0, 40, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = "orange";
+    for (let i = 0; i < 8; i++) {
+        ctx.rotate(Math.PI / 4);
+        ctx.beginPath();
+        ctx.moveTo(50, 0);
+        ctx.lineTo(70, 0);
+        ctx.stroke();
+    }
+
+    ctx.restore();
+}
+
+//drzewo
+function drawTree(x, y) {
+    // pień
+    ctx.fillStyle = "#8B4513";
+    ctx.fillRect(x - 20, y, 40, 120);
+
+    
+    ctx.fillStyle = "green";
+    ctx.beginPath();
+    ctx.arc(x, y - 30, 80, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+//kicius
+function drawCat(x, y) {
+    // ciało
+    ctx.fillStyle = "#ffcc99";
+    ctx.beginPath();
+    ctx.ellipse(x, y, 25, 18, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    //głowa
+    ctx.beginPath();
+    ctx.arc(x + 30, y - 15, 15, 0, Math.PI * 2);
+    ctx.fill();
+
+    //oczy
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(x + 25, y - 18, 3, 0, Math.PI * 2);
+    ctx.arc(x + 35, y - 18, 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    //uszy
+    ctx.fillStyle = "#ffcc99";
+    ctx.beginPath();
+    ctx.moveTo(x + 15, y - 30);
+    ctx.lineTo(x + 23, y - 5);
+    ctx.lineTo(x + 7, y - 10);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(x + 45, y - 30);
+    ctx.lineTo(x + 37, y - 5);
+    ctx.lineTo(x + 53, y - 10);
+    ctx.closePath();
+    ctx.fill();
+
+    //ogon
+    ctx.strokeStyle = "#ffcc99";
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(x - 20, y);
+    ctx.quadraticCurveTo(x - 50, y - 15, x - 15, y - 35);
+    ctx.stroke();
+}
+
+//grzybek
+function drawMushroom(x, y) {
+    ctx.fillStyle = "#f5deb3";
+    ctx.fillRect(x - 5, y, 10, 20);
+
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(x, y, 15, Math.PI, 0);
+    ctx.fill();
+}
+
+//kwiatuszek
+function drawFlower(x, y) {
+    ctx.strokeStyle = "green";
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x, y + 20);
+    ctx.stroke();
+
+    ctx.fillStyle = "pink";
+    for (let i = 0; i < 5; i++) {
+        let angle = i * (Math.PI * 2 / 5);
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(angle)*8, y + Math.sin(angle)*8, 5, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    ctx.fillStyle = "yellow";
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+//jezyk
+function drawHedgehog(x, y) {
+    ctx.fillStyle = "#8B4513";
+    ctx.beginPath();
+    ctx.arc(x, y, 40, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = "#5a2d0c";
+    ctx.lineWidth = 3;
+    for (let i = 0; i <= 20; i++) {
+        let angle = Math.PI + (i / 20) * Math.PI;
+        let x1 = x + Math.cos(angle) * 40;
+        let y1 = y + Math.sin(angle) * 40;
+        let x2 = x + Math.cos(angle) * 60;
+        let y2 = y + Math.sin(angle) * 60;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+    }
+
+    ctx.fillStyle = "#deb887";
+    ctx.beginPath();
+    ctx.arc(x + 30, y, 20, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(x + 35, y - 5, 3, 0, Math.PI * 2);
+    ctx.arc(x + 50, y, 4, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+//staw
+function drawPond(x, y, width, height) {
+    const gradient = ctx.createLinearGradient(x, y, x, y + height);
+    gradient.addColorStop(0, "#00BFFF");
+    gradient.addColorStop(1, "#1E90FF");
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.ellipse(x + width/2, y + height/2, width/2, height/2, 0, 0, Math.PI*2);
+    ctx.fill();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //niebo
+    ctx.fillStyle = "#87CEEB";
+    ctx.fillRect(0, 0, 800, 600);
+
+    //slonce
+    sunAngle += 0.01;
+    drawSun();
+
+    //ziemia
+    ctx.fillStyle = "green";
+    ctx.fillRect(0, 400, 800, 200);
+
+    //staw
+    drawPond(550, 430, 150, 80);
+
+    //drzewo
+    drawTree(150, 350);
+
+    //kicius
+    drawCat(150, 310);
+
+    //grzyb
+    drawMushroom(300, 420);
+    drawMushroom(330, 430);
+
+    //kwiatki
+    drawFlower(500, 420);
+    drawFlower(530, 430);
+    
+    //jezyk
+    bounce += 0.1;
+    let x = 400;
+    let y = 400 + Math.sin(bounce) * 30;
+    drawHedgehog(x, y);
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>
