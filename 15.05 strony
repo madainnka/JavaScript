@@ -1,0 +1,57 @@
+enctype-ustala sposob kodowania danych, wybierany tzlko gdy formularz jest przesylany metoda POST
+action =adres- ustala adres na ktory bedzie wysylany formularz
+autocomplete on lub off - wlaczenie lub wylaczenie automatycznych podpowiedzi w polach formularza
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form enctype="application/x-www-form-urlencoded">
+        <p>
+            <input type="file"></input>
+        </p>
+    </form>
+</body>
+</html>
+
+lista rozwijana do autouzupelniania pola tekstowego i mui byc powiazana z polem <input list>
+atrybut list pola input musi byc taki sam jak id dla datalist
+<input list="text" name="tekst">
+    <datalist id="text">
+        <option value="jeden"></option>
+        <option value="dwa"></option>
+        <option value="trzy"></option>
+    </datalist>
+
+<form action="http://localhost/formularz.php" method="post">
+        <p>podaj adres</p>
+        <input type="text" name="adres">
+        <p><input type="checkbox" name="opcje1" checked>Nie zgadzam sie na przetwarzanie danych osobowych  </p>
+        <p><input type="checkbox" value="kobieta" name="grupa_plec" checked>KOBIETA </p>
+        <p><input type="radio" value="mezczyzna" name="grupa_plec">MEZCZYZNA  </p>
+        <p><input type="radio" value="niewiadomo" name="grupa_plec">NIE CHCE ODPOWIADAC  </p>
+    </form>
+
+     <form action="http://localhost/formularz.php" method="post">
+        <h5>Podaj haslo o maksymalnej długości 8 znakow</h5>
+        <input type="password" name="haslo" size="5" maxlength="8">
+        <form method="post" enctype="multipart/form-data">
+            <p>
+                <label>
+                    Załaduj i wyslij plik:
+                    <input type="file" accept=".jpg, .gif, .png" multiple>
+                    <input type="file" accept="image/*">
+                    <input type="file" accept="audio/*">
+                    <input type="file" accept="video/*">
+                    <input type="file" accept="video/*">
+                </label>
+            </p>
+            <p>Załaduj i wyslij plik:<br>
+            <input type="file" name="plik" size="30">  </p>
+            <input type="submit" value="wyslij">
+        </form>
+    </form>
