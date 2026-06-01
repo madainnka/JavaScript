@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script src="jquery.min.js"></script>
+    <script>
+        $(function($){
+            $("button").click(function(){
+                $("p")addclass();
+
+            });
+
+        })
+        </script>
+        <style>
+            .red{ color: red; }
+        </style>
+    <p>This is  a paragrapf in the dic</p>
+    
+    <button>Add class to p element</button>
+</body>
+</html>
