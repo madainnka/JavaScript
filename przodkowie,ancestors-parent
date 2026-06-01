@@ -1,0 +1,7 @@
+<div> class="ancestors">
+    <div style="width:300px">div (grandparent)
+        <p>p (direct parent)
+           <span>span</span>
+        </p>
+      </div>
+    </div>  
